@@ -55,35 +55,37 @@
 </div>
 
 <script>
-  import { Swiper, Navigation, Pagination, Autoplay } from 'swiper';
-  import 'swiper/css';
-  import 'swiper/css/navigation';
-  import 'swiper/css/pagination';
-
   // Inicializar Swiper cuando el DOM esté listo
   document.addEventListener('DOMContentLoaded', function() {
-    const swiper = new Swiper('.hero-swiper', {
-      modules: [Navigation, Pagination, Autoplay],
-      loop: true,
-      autoplay: {
-        delay: 5000,
-        disableOnInteraction: false,
-      },
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-      effect: 'slide',
-      speed: 800,
+    // Importación dinámica para evitar problemas en el build
+    import('swiper').then(({ Swiper }) => {
+      const swiper = new Swiper('.hero-swiper', {
+        loop: true,
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        effect: 'slide',
+        speed: 800,
+      });
     });
   });
 </script>
 
 <style>
+  /* Importar estilos de Swiper */
+  @import 'swiper/css';
+  @import 'swiper/css/navigation';
+  @import 'swiper/css/pagination';
+  
   .carousel-container {
     width: 100%;
   }

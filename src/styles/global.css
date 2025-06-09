@@ -30,6 +30,36 @@ body {
   transform: scale(1.05);
 }
 
+/* Animación específica para el botón flotante */
+.pulse-animation {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Animación de entrada para el botón flotante */
+#whatsapp-float {
+  animation: slideInRight 0.5s ease-out;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
 /* Tarjetas de servicio */
 .card-service {
   background-color: white;

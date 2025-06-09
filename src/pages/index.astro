@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
 import Carousel from '../components/Carousel.astro';
 import Services from '../components/Services.astro';
 import Gallery from '../components/Gallery.astro';
@@ -8,6 +9,9 @@ import Contact from '../components/Contact.astro';
 ---
 
 <BaseLayout title="Mario Albañil - Construcción y Remodelación Profesional">
+  <!-- Header/Navegación -->
+  <Header />
+
   <!-- Sección Hero -->
   <section id="hero" class="relative">
     <Carousel />
