@@ -36,11 +36,15 @@ const { title, description = "Servicios profesionales de albañilería - Constru
         </svg>
         ¡Escríbeme!
       </a>
-    </div>
-
-    <!-- Scripts -->
+    </div>    <!-- Scripts -->
     <script>
       import '../styles/global.css';
+      import { initScrollReveal } from '../utils/scrollreveal.js';
+      
+      // Inicializar ScrollReveal cuando el DOM esté cargado
+      document.addEventListener('DOMContentLoaded', function() {
+        initScrollReveal();
+      });
     </script>
   </body>
 </html>

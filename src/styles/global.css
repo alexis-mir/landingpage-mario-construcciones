@@ -1,28 +1,62 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 /* Estilos personalizados para la landing de albañilería */
-@layer base {
-  html {
-    scroll-behavior: smooth;
-  }
-  
-  body {
-    font-family: 'Inter', sans-serif;
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+/* Botón de WhatsApp personalizado */
+.btn-whatsapp {
+  background-color: #10b981;
+  color: white;
+  font-weight: bold;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  transform: scale(1);
+}
+
+.btn-whatsapp:hover {
+  background-color: #059669;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  transform: scale(1.05);
+}
+
+/* Tarjetas de servicio */
+.card-service {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: 1px solid #f3f4f6;
+}
+
+.card-service:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* Espaciado de secciones */
+.section-padding {
+  padding: 4rem 1rem;
+}
+
+@media (min-width: 768px) {
+  .section-padding {
+    padding: 4rem 2rem;
   }
 }
 
-@layer components {
-  .btn-whatsapp {
-    @apply bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-full inline-flex items-center gap-2 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105;
-  }
-  
-  .card-service {
-    @apply bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100;
-  }
-  
+@media (min-width: 1024px) {
   .section-padding {
-    @apply py-16 px-4 md:px-8 lg:px-16;
+    padding: 4rem 4rem;
   }
 }

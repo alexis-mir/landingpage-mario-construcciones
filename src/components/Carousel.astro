@@ -1,0 +1,104 @@
+---
+// Componente Carousel para la sección Hero
+---
+
+<div class="carousel-container sr">
+  <div class="swiper hero-swiper">
+    <div class="swiper-wrapper">
+      <!-- Slide 1 -->
+      <div class="swiper-slide">
+        <div class="relative h-[60vh] md:h-[70vh] bg-gradient-to-r from-tierra to-construccion">
+          <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+          <div class="absolute inset-0 flex items-center justify-center">
+            <div class="text-center text-white px-4">
+              <h2 class="text-3xl md:text-5xl font-bold mb-4">Construcción de Calidad</h2>
+              <p class="text-lg md:text-xl mb-6">Expertos en construcción de viviendas desde cero</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Slide 2 -->
+      <div class="swiper-slide">
+        <div class="relative h-[60vh] md:h-[70vh] bg-gradient-to-r from-cemento to-gray-600">
+          <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+          <div class="absolute inset-0 flex items-center justify-center">
+            <div class="text-center text-white px-4">
+              <h2 class="text-3xl md:text-5xl font-bold mb-4">Reformas Integrales</h2>
+              <p class="text-lg md:text-xl mb-6">Transformamos tu hogar con acabados profesionales</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Slide 3 -->
+      <div class="swiper-slide">
+        <div class="relative h-[60vh] md:h-[70vh] bg-gradient-to-r from-seguridad to-yellow-600">
+          <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+          <div class="absolute inset-0 flex items-center justify-center">
+            <div class="text-center text-white px-4">
+              <h2 class="text-3xl md:text-5xl font-bold mb-4">Ampliaciones</h2>
+              <p class="text-lg md:text-xl mb-6">Expandimos tu espacio con diseños funcionales</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Navegación -->
+    <div class="swiper-button-next text-white"></div>
+    <div class="swiper-button-prev text-white"></div>
+    
+    <!-- Paginación -->
+    <div class="swiper-pagination"></div>
+  </div>
+</div>
+
+<script>
+  import { Swiper, Navigation, Pagination, Autoplay } from 'swiper';
+  import 'swiper/css';
+  import 'swiper/css/navigation';
+  import 'swiper/css/pagination';
+
+  // Inicializar Swiper cuando el DOM esté listo
+  document.addEventListener('DOMContentLoaded', function() {
+    const swiper = new Swiper('.hero-swiper', {
+      modules: [Navigation, Pagination, Autoplay],
+      loop: true,
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      effect: 'slide',
+      speed: 800,
+    });
+  });
+</script>
+
+<style>
+  .carousel-container {
+    width: 100%;
+  }
+  
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: white !important;
+  }
+  
+  .swiper-pagination-bullet {
+    background: white !important;
+    opacity: 0.5;
+  }
+  
+  .swiper-pagination-bullet-active {
+    opacity: 1 !important;
+  }
+</style>

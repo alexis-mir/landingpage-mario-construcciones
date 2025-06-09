@@ -1,0 +1,112 @@
+---
+// Componente Gallery - Galería de proyectos realizados
+const proyectos = [
+  {
+    titulo: "Reforma Integral Cocina",
+    descripcion: "Renovación completa con acabados modernos",
+    imagen: "/api/placeholder/400/300",
+    categoria: "Reformas"
+  },
+  {
+    titulo: "Construcción Casa Nueva",
+    descripcion: "Vivienda unifamiliar de 150m²",
+    imagen: "/api/placeholder/400/300", 
+    categoria: "Construcción"
+  },
+  {
+    titulo: "Ampliación Salón",
+    descripcion: "Expansión de 30m² con terraza integrada",
+    imagen: "/api/placeholder/400/300",
+    categoria: "Ampliaciones"
+  },
+  {
+    titulo: "Baño Completo",
+    descripcion: "Renovación con materiales premium",
+    imagen: "/api/placeholder/400/300",
+    categoria: "Reformas"
+  },
+  {
+    titulo: "Tabiquería Interior",
+    descripcion: "División de espacios con ladrillo visto",
+    imagen: "/api/placeholder/400/300",
+    categoria: "Tabiquería"
+  },
+  {
+    titulo: "Solado Exterior",
+    descripcion: "Pavimento antideslizante para terraza",
+    imagen: "/api/placeholder/400/300",
+    categoria: "Solados"
+  }
+];
+---
+
+<section id="proyectos" class="section-padding bg-gray-50">
+  <div class="max-w-7xl mx-auto">
+    <!-- Título de la sección -->
+    <div class="text-center mb-16">
+      <h2 class="sr text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+        Nuestros Proyectos
+      </h2>
+      <p class="sr text-lg text-gray-600 max-w-2xl mx-auto">
+        Algunos ejemplos de nuestros trabajos realizados con la máxima calidad y profesionalidad
+      </p>
+    </div>
+
+    <!-- Grid de proyectos -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {proyectos.map((proyecto, index) => (
+        <div class="sr bg-white rounded-lg shadow-md overflow-hidden group hover:shadow-xl transition-all duration-300" style={`animation-delay: ${index * 150}ms`}>
+          <!-- Imagen del proyecto -->
+          <div class="relative h-64 bg-gradient-to-br from-tierra to-construccion overflow-hidden">
+            <div class="absolute inset-0 bg-black bg-opacity-20"></div>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="text-center text-white">
+                <div class="text-6xl mb-2">🏗️</div>
+                <p class="text-sm">Imagen del proyecto</p>
+              </div>
+            </div>
+            <!-- Overlay con categoría -->
+            <div class="absolute top-4 left-4">
+              <span class="bg-white bg-opacity-90 text-gray-800 px-3 py-1 rounded-full text-sm font-medium">
+                {proyecto.categoria}
+              </span>
+            </div>
+          </div>
+
+          <!-- Contenido -->
+          <div class="p-6">
+            <h3 class="text-xl font-semibold text-gray-800 mb-2 group-hover:text-construccion transition-colors">
+              {proyecto.titulo}
+            </h3>
+            <p class="text-gray-600 text-sm mb-4">
+              {proyecto.descripcion}
+            </p>
+            <button class="text-construccion hover:text-tierra font-medium text-sm transition-colors">
+              Ver más detalles →
+            </button>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Estadísticas -->
+    <div class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+      <div class="sr">
+        <div class="text-3xl md:text-4xl font-bold text-construccion mb-2">150+</div>
+        <p class="text-gray-600">Proyectos Completados</p>
+      </div>
+      <div class="sr">
+        <div class="text-3xl md:text-4xl font-bold text-construccion mb-2">15+</div>
+        <p class="text-gray-600">Años de Experiencia</p>
+      </div>
+      <div class="sr">
+        <div class="text-3xl md:text-4xl font-bold text-construccion mb-2">100%</div>
+        <p class="text-gray-600">Clientes Satisfechos</p>
+      </div>
+      <div class="sr">
+        <div class="text-3xl md:text-4xl font-bold text-construccion mb-2">24h</div>
+        <p class="text-gray-600">Respuesta Rápida</p>
+      </div>
+    </div>
+  </div>
+</section>
