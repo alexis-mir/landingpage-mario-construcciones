@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Estilos personalizados para la landing de albañilería */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer components {
+  .btn-whatsapp {
+    @apply bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-full inline-flex items-center gap-2 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105;
+  }
+  
+  .card-service {
+    @apply bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100;
+  }
+  
+  .section-padding {
+    @apply py-16 px-4 md:px-8 lg:px-16;
+  }
+}
